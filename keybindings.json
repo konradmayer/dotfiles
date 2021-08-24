@@ -1,0 +1,93 @@
+// keybindings for vscode
+[
+  
+    ///////////////////////////////////////////////////////
+    // general
+    ///////////////////////////////////////////////////////
+  
+  
+    ///////////////////////////////////////////////////////
+    // python
+    ///////////////////////////////////////////////////////
+    {
+        "key": "ctrl+enter",
+        //"command": [ "python.execSelectionInTerminal", "cursorDown" ],
+        "command": "macros.pythonExecSelectionAndCursorDown",
+        "when": "editorTextFocus && editorLangId == 'python'"
+    },
+  
+    ///////////////////////////////////////////////////////
+    // R
+    ///////////////////////////////////////////////////////
+    {
+        "key": "alt+-",
+        "command": "type",
+        "when": "editorLangId == r || editorLangId == rmd && editorTextFocus",
+        "args": { "text": " <- " }
+    },
+    {
+        "key": "ctrl+shift+m",
+        "command": "type",
+        "when": "editorLangId == r || editorLangId == rmd && editorTextFocus",
+        "args": { "text": " %>% " }
+    },
+    {
+        "description": "run R CMD check",
+        "key": "ctrl+shift+e",
+        "command": "r.runCommand",
+        "when": "editorLangId == r || editorLangId == rmd && editorTextFocus",
+        "args": "devtools::check()"
+    },
+    {
+        "description": "build R package",
+        "key": "ctrl+shift+b",
+        "command": "r.build",
+        "when": "editorLangId == r || editorLangId == rmd && editorTextFocus"
+    },
+    {
+        "description": "test R package",
+        "key": "ctrl+shift+t",
+        "command": "r.test",
+        "when": "editorLangId == r || editorLangId == rmd && editorTextFocus"
+    },
+    {
+        "description": "load R package",
+        "key": "ctrl+shift+l",
+        "command": "r.loadAll",
+        "when": "editorLangId == r || editorLangId == rmd && editorTextFocus"
+    },
+    {
+        "description": "roxygenize documentation",
+        "key": "ctrl+shift+d",
+        "command": "r.runCommand",
+        "when": "editorLangId == r || editorLangId == rmd && editorTextFocus",
+        "args": "devtools::document()"
+    },
+    {
+        "description": "restart R session",
+        "key": "ctrl+shift+F10",
+        "command": "r.runCommand",
+        "when": "editorLangId == r",
+        "args": "rstudioapi::restartSession()"
+    },
+    {
+        "description": "show documentation",
+        "key": "F2",
+        "command": "r.helpPanel.openForSelection",
+        "when": "editorLangId == r || editorLangId == rmd && editorTextFocus"
+    },
+    {
+        "description": "View: Show R Workspace",
+        "key": "alt+r",
+        "command": "workbench.view.extension.workspaceViewer"
+    },
+    {
+        "description": "knit to html",
+        "key": "ctrl+i",
+        "command": "r.runCommandWithEditorPath",
+        "when": "editorTextFocus",
+        "args": "rmarkdown::render(\"$$\", output_format = rmarkdown::html_document(), output_dir = \".\", clean = TRUE)"
+    }
+]
+
+
