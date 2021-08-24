@@ -1,0 +1,138 @@
+{
+    ///////////////////////////////////////////////////////
+    // general settings
+    ///////////////////////////////////////////////////////
+
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.lineNumbers": "relative",
+    "window.restoreFullscreen": true,
+    "window.newWindowDimensions": "maximized",
+    
+    ///////////////////////////////////////////////////////
+    // python
+    ///////////////////////////////////////////////////////
+
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "python.pythonPath": "INSERT PATH TO PYTHON",
+    "macros": {  // update: requires macros extension by publisher:"geddski" 
+        "pythonExecSelectionAndCursorDown": [
+            "python.execSelectionInTerminal", 
+            //"vscode.window.activeTextEditor.show()",
+            "cursorDown" 
+        ]
+    },
+    
+    ///////////////////////////////////////////////////////
+    // R
+    ///////////////////////////////////////////////////////
+
+    "r.bracketedPaste": true,
+    "r.rpath.linux": "/usr/bin/R",
+    "r.rpath.windows": "INSERT PATH TO R",
+    "r.rterm.linux": "INSERT PATH TO RADIAN",
+    "r.rterm.windows": "INSERT PATH TO R",
+    "r.rterm.option": [],
+    "r.lsp.path": "INSERT PATH TO R",
+    "r.sessionWatcher": true,
+    
+    ///////////////////////////////////////////////////////
+    // vim
+    ///////////////////////////////////////////////////////
+
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false
+    },
+    "vim.easymotion": true,
+    "vim.surround": true,
+    "vim.incsearch": true,
+    "vim.sneak": true,
+    "vim.useSystemClipboard": true,
+    "vim.insertModeKeyBindingsNonRecursive": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+        "before": ["J"],
+        "after": ["5", "j"]
+        },
+        {
+        "before": ["K"],
+        "after": ["5", "k"]
+        },
+        {
+        "before": ["<C-h>"],
+        "after": ["<C-w>", "h"]
+        },
+        {
+        "before": ["<C-j>"],
+        "after": ["<C-w>", "j"]
+        },
+        {
+        "before": ["<C-k>"],
+        "after": ["<C-w>", "k"]
+        },
+        {
+        "before": ["<C-l>"],
+        "after": ["<C-w>", "l"]
+        },
+        {
+        "before": ["<Leader>", "t", "t"],
+        "commands": [":tabnew"]
+        },
+        {
+        "before": ["<Leader>", "t", "n"],
+        "commands": [":tabnext"]
+        },
+        {
+        "before": ["<Leader>", "t", "p"],
+        "commands": [":tabprev"]
+        },
+        {
+        "before": ["<Leader>", "t", "o"],
+        "commands": [":tabo"]
+        },
+        {
+        "before": ["<Leader>", "/"],
+        "commands": [":noh"]
+        },
+        {
+            "before": ["<leader>", "m"],
+            "commands": [
+                "bookmarks.toggle"
+            ]
+        },
+        {
+            "before": ["<leader>", "b"],
+            "commands": [
+                "bookmarks.list"
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        },
+    ]
+
+}
