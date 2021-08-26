@@ -118,6 +118,18 @@
         {
         "before": ["<leader>", "b"],
         "commands": ["bookmarks.list"]
+        },
+        { // toggle explorer - this has a counterpart in keybindings.json to work when not in the editor (outside vim mode)
+        "before": ["<leader>", "t"],
+        "commands": ["workbench.action.toggleSidebarVisibility"]
+        },
+        { // go from open editor to file in explorer
+        "before": ["<leader>", "f"],
+        "commands": [ "revealInExplorer" ],
+        },
+        { // rename file in explorer
+        "before": ["<leader>", "r", "f"],
+        "commands": [ "fileutils.renameFile" ]
         }
     ],
     "vim.visualModeKeyBindings": [
