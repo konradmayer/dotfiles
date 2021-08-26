@@ -87,6 +87,18 @@
         "command": "r.runCommandWithEditorPath",
         "when": "editorTextFocus",
         "args": "rmarkdown::render(\"$$\", output_format = rmarkdown::html_document(), output_dir = \".\", clean = TRUE)"
+    },
+
+    ///////////////////////////////////////////////////////
+    // vim
+    ///////////////////////////////////////////////////////
+
+    // plays together with vim keybinding in settings.json to toggle explorer window with <leader>+t
+    // whenever not in the editor (and thus not in vim mode)
+    {
+        "key": ", t", 
+        "command": "workbench.action.toggleSidebarVisibility", 
+        "when": "!editorTextFocus"
     }
 ]
 
