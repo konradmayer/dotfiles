@@ -127,7 +127,7 @@
         "before": ["<leader>", "f"],
         "commands": [ "revealInExplorer" ],
         },
-        { // rename file in explorer
+        { // rename open file
         "before": ["<leader>", "r", "f"],
         "commands": [ "fileutils.renameFile" ]
         }
