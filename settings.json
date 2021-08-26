@@ -16,6 +16,7 @@
     // python
     ///////////////////////////////////////////////////////
 
+    "terminal.integrated.inheritEnv": false // prevents issues of the integrated terminal with conda environments
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
