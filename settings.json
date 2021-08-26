@@ -104,38 +104,30 @@
         "commands": [":tabo"]
         },
         {
+        "before": ["<Leader>", "j"],
+        "after": ["J"]
+        },
+        {
         "before": ["<Leader>", "/"],
         "commands": [":noh"]
         },
         {
-            "before": ["<leader>", "m"],
-            "commands": [
-                "bookmarks.toggle"
-            ]
+        "before": ["<leader>", "m"],
+        "commands": ["bookmarks.toggle"]
         },
         {
-            "before": ["<leader>", "b"],
-            "commands": [
-                "bookmarks.list"
-            ]
+        "before": ["<leader>", "b"],
+        "commands": ["bookmarks.list"]
         }
     ],
     "vim.visualModeKeyBindings": [
         {
-            "before": [
-                ">"
-            ],
-            "commands": [
-                "editor.action.indentLines"
-            ]
+        "before": [">"],
+        "commands": ["editor.action.indentLines"]
         },
         {
-            "before": [
-                "<"
-            ],
-            "commands": [
-                "editor.action.outdentLines"
-            ]
+        "before": ["<"],
+        "commands": ["editor.action.outdentLines"]
         },
     ]
 
