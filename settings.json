@@ -6,7 +6,7 @@
 
     "workbench.startupEditor": "newUntitledFile",
     "workbench.editor.enablePreview": false,
-     "explorer.autoReveal": false,
+    "explorer.autoReveal": false,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.lineNumbers": "relative",
     "window.restoreFullscreen": true,
