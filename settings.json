@@ -12,6 +12,7 @@
     "window.restoreFullscreen": true,
     "window.newWindowDimensions": "maximized",
     "workbench.list.keyboardNavigation": "filter",
+    "editor.rulers": [80],
     
     ///////////////////////////////////////////////////////
     // python
