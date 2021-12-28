@@ -134,6 +134,10 @@
         "before": ["<leader>", "r", "f"],
         "commands": [ "fileutils.renameFile" ]
         }
+        { // change language mode
+        "before": ["<leader>", "e", "l"],
+        "commands": [ "workbench.action.editor.changeLanguageMode" ]
+        }
     ],
     "vim.visualModeKeyBindings": [
         {
