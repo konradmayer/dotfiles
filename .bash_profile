@@ -1,5 +1,12 @@
 export PATH="$HOME/.local/bin/:$PATH"
 
+# enable vi editing mode
+set -o vi
+
+# Include filenames beginning with a "." in the filename expansion
+shopt -s dotglob
+
+
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
@@ -15,12 +22,6 @@ for option in autocd globstar; do
 	shopt -s "$option" 2> /dev/null;
 done;
 
-# ls aliases
-alias ls='ls --time-style=long-iso'
-alias ll='ls -alh
-
-alias ff='find . -type f -name'
-alias fd='find . -type d -name'
 
 # # add checked out git branch to prompt
 # if [ "$color_prompt" = yes ]; then
