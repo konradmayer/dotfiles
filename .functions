@@ -19,3 +19,6 @@ function fs() {
 	fi;
 }
 
+function sumcol() {
+  awk "{ SUM += \$${1} } END { print SUM }"
+}
