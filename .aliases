@@ -1,6 +1,6 @@
 # ls aliases
 alias ls='ls --time-style=long-iso'
-alias ll='ls -alh
+alias ll='ls -alh'
 
 # find aliases
 alias ff='find . -type f -name'
