@@ -19,6 +19,9 @@ done;
 alias ls='ls --time-style=long-iso'
 alias ll='ls -alh
 
+alias ff='find . -type f -name'
+alias fd='find . -type d -name'
+
 # # add checked out git branch to prompt
 # if [ "$color_prompt" = yes ]; then
 #    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " [%s] ")\$ '
