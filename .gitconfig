@@ -18,9 +18,9 @@
 	ci = commit
 	st = status
 	unstage = reset HEAD --
-        recommit = commit --amend --no-edit
+	recommit = commit --amend --no-edit
 	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f" # Switch to a branch, creating it if necessary.
 	tags = tag -l
 	branches = branch --all
 	remotes = remote --verbose
-        reb = "!r() { git rebase -i HEAD~$1; }; r" # Interactive rebase with the given number of latest commits.
+	reb = "!r() { git rebase -i HEAD~$1; }; r" # Interactive rebase with the given number of latest commits.
