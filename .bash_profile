@@ -6,6 +6,9 @@ set -o vi
 # Include filenames beginning with a "." in the filename expansion
 shopt -s dotglob
 
+# Check the window size after each command and, if necessary, update the values
+# of LINES and COLUMNS.
+shopt -s checkwinsize
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
