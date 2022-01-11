@@ -24,4 +24,4 @@
 	branches = branch --all
 	remotes = remote --verbose
 	reb = "!r() { git rebase -i HEAD~$1; }; r" # Interactive rebase with the given number of latest commits.
-	ls-subtrees = !"git log | grep git-subtree-dir | tr -d ' ' | cut -d : -f2 | sort | uniq | xargs -I {} bash -c 'if [ -d $(git rev-parse --show-toplevel)/{} ] ; then echo {}; fi'"
+	subtrees = !"git log | grep git-subtree-dir | tr -d ' ' | cut -d : -f2 | sort | uniq | xargs -I {} bash -c 'if [ -d $(git rev-parse --show-toplevel)/{} ] ; then echo {}; fi'"
