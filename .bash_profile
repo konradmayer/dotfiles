@@ -2,6 +2,7 @@ export PATH="$HOME/.local/bin/:$PATH"
 
 # enable vi editing mode
 set -o vi
+bind 'set show-mode-in-prompt on'
 
 # Include filenames beginning with a "." in the filename expansion
 shopt -s dotglob
