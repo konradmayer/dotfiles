@@ -14,6 +14,7 @@
     "window.newWindowDimensions": "maximized",
     "workbench.list.keyboardNavigation": "filter",
     "editor.rulers": [80],
+    "workbench.tree.indent": 20,
     
     ///////////////////////////////////////////////////////
     // python
