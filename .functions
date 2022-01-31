@@ -23,12 +23,11 @@ function sumcol() {
   awk "{ SUM += \$${1} } END { print SUM }"
 }
 
-
 # pandoc
 function md2pdf() {
-	pandoc "$1" -o "${1%.md}.pdf"
+	for file in "$@"; do pandoc "$file" -o "${file%.md}.pdf"; done
 }
 
 function md2html() {
-	pandoc "$1" -o "${1%.md}.html"
+	for file in "$@"; do pandoc "$file" -o "${file%.md}.html"; done
 }
