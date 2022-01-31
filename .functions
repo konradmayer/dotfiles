@@ -22,3 +22,13 @@ function fs() {
 function sumcol() {
   awk "{ SUM += \$${1} } END { print SUM }"
 }
+
+
+# pandoc
+function md2pdf() {
+	pandoc "$1" -o "${1%.md}.pdf"
+}
+
+function md2html() {
+	pandoc "$1" -o "${1%.md}.html"
+}
