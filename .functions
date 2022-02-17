@@ -31,3 +31,16 @@ function md2pdf() {
 function md2html() {
 	for file in "$@"; do pandoc "$file" -o "${file%.md}.html"; done
 }
+
+function mailattach() {
+    
+    if [ $# -gt 1 ]; then
+    zip -r /tmp/attachment.zip $@
+    ATTACHMENT="/tmp/attachment.zip"
+    else
+    ATTACHMENT=$1
+    fi
+    
+    # send mail
+    echo "body text" | mailx -s "Subject: attachment incoming" -a $ATTACHMENT konrad.mayer@zamg.ac.at
+}
