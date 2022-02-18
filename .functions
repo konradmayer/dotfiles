@@ -42,5 +42,5 @@ function mailattach() {
     fi
     
     # send mail
-    echo "body text" | mailx -s "Subject: attachment incoming" -a $ATTACHMENT konrad.mayer@zamg.ac.at
+    echo "message sent from the terminal using the function mailttach" | mailx -s "Subject: attachment incoming" -a $ATTACHMENT konrad.mayer@zamg.ac.at
 }
