@@ -12,5 +12,21 @@ alias apts="sudo apt-cache search"
 alias aptu="sudo apt-get update \
                 && sudo apt-get upgrade"
 
+#docker aliases (mainly from https://github.com/Bash-it/bash-it/blob/master/aliases/available/docker.aliases.bash)
+alias dk='docker'
+alias dklc='docker ps -l'                                                            # List last Docker container
+alias dklcid='docker ps -l -q'                                                       # List last Docker container ID
+alias dklcip='docker inspect -f "{{.NetworkSettings.IPAddress}}" $(docker ps -l -q)' # Get IP of last Docker container
+alias dkps='docker ps'                                                               # List running Docker containers
+alias dkpsa='docker ps -a'                                                           # List all Docker containers
+alias dki='docker images'                                                            # List Docker images
+alias dkrmac='docker rm $(docker ps -a -q)'                                          # Delete all Docker containers
+alias dkrmlc='docker-remove-most-recent-container'  	      	                       # Delete most recent (i.e., last) Docker container
+alias dkrmli='docker-remove-most-recent-image'                                       # Delete most recent (i.e., last) Docker image
+alias dkelc='docker exec -it $(dklcid) bash --login' # Enter last container (works with Docker 1.3 and above)
+alias dkip='docker image prune -a -f'
+alias dkvp='docker volume prune -f'
+alias dksp='docker system prune -a -f'
+
 # misc aiases
 alias gr=jump-to-git-root # shortcut for a function defined in .functions
