@@ -23,7 +23,10 @@ function sumcol() {
   awk "{ SUM += \$${1} } END { print SUM }"
 }
 
+
+#########################
 # pandoc
+#########################
 function md2pdf() {
 	for file in "$@"; do pandoc "$file" -o "${file%.md}.pdf"; done
 }
@@ -45,6 +48,9 @@ function mailattach() {
     echo "message sent from the terminal using the function mailttach" | mailx -s "Subject: attachment incoming" -a $ATTACHMENT konrad.mayer@zamg.ac.at
 }
 
+#########################
+# GIT
+#########################
 # from https://bezhermoso.github.io/2018/07/28/jump-back-up-to-git-repo-root-directory/
 function jump-to-git-root {
   local _root_dir="$(git rev-parse --show-toplevel 2>/dev/null)"
@@ -67,4 +73,20 @@ function jump-to-git-root {
   OLDPWD=$_pwd
   echo "Git repo root: $_root_dir"
   cd $_root_dir
+}
+
+#########################
+# docker
+#########################
+# from https://github.com/Bash-it/bash-it/blob/master/plugins/available/docker.plugin.bash
+function docker-remove-most-recent-container() {
+  docker ps -ql | xargs docker rm
+}
+
+function docker-remove-most-recent-image() {
+  docker images -q | head -1 | xargs docker rmi
+}
+
+function docker-enter() {
+  docker exec -it "$@" /bin/bash;
 }
