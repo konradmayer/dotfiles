@@ -35,19 +35,6 @@ function md2html() {
 	for file in "$@"; do pandoc "$file" -o "${file%.md}.html"; done
 }
 
-function mailattach() {
-    
-    if [ $# -gt 1 ]; then
-    zip -r /tmp/attachment.zip $@
-    ATTACHMENT="/tmp/attachment.zip"
-    else
-    ATTACHMENT=$1
-    fi
-    
-    # send mail
-    echo "message sent from the terminal using the function mailttach" | mailx -s "Subject: attachment incoming" -a $ATTACHMENT konrad.mayer@zamg.ac.at
-}
-
 #########################
 # GIT
 #########################
@@ -89,4 +76,21 @@ function docker-remove-most-recent-image() {
 
 function docker-enter() {
   docker exec -it "$@" /bin/bash;
+}
+
+
+#########################
+# misc
+#########################
+function mailattach() {
+    
+    if [ $# -gt 1 ]; then
+    zip -r /tmp/attachment.zip $@
+    ATTACHMENT="/tmp/attachment.zip"
+    else
+    ATTACHMENT=$1
+    fi
+    
+    # send mail
+    echo "message sent from the terminal using the function mailttach" | mailx -s "Subject: attachment incoming" -a $ATTACHMENT konrad.mayer@zamg.ac.at
 }
