@@ -88,6 +88,13 @@
         "when": "editorTextFocus",
         "args": "rmarkdown::render(\"$$\", output_format = rmarkdown::html_document(), output_dir = \".\", clean = TRUE)"
     },
+    {//needs docthis (https://github.com/mdlincoln/docthis) to be installed, function sourced (e.g. devtools::load_all() or ctrl+shift+L) and function name selected
+        "description": "insert roxygen skeleton",
+        "key": "ctrl+shift+alt+r",
+        "command": "r.runCommand",
+        "when": "editorTextFocus",
+        "args": "docthis::doc_this_addin()" 
+    },
 
     ///////////////////////////////////////////////////////
     // vim
