@@ -94,3 +94,13 @@ function mailattach() {
     # send mail
     echo "message sent from the terminal using the function mailttach" | mailx -s "Subject: attachment incoming" -a $ATTACHMENT konrad.mayer@zamg.ac.at
 }
+
+# copy/paste to and from clipboard - from https://stackoverflow.com/questions/5130968/how-can-i-copy-the-output-of-a-command-directly-into-my-clipboard#41843618
+
+_copy(){
+    cat | xclip -selection clipboard
+}
+
+_paste(){
+    xclip -selection clipboard -o
+}
