@@ -59,6 +59,15 @@ prompt_git() {
 	echo -e "${1}${branchName}${2}${s}";
 }
 
+function prompt_conda() {
+	condaprompt=""
+	if [[ $CONDA_DEFAULT_ENV != "base" ]]; then
+		condaprompt="(${CONDA_DEFAULT_ENV})";
+	fi;
+
+	echo -e "${condaprompt}";
+}
+
 if tput setaf 1 &> /dev/null; then
 	tput sgr0; # reset colors
 	bold=$(tput bold);
@@ -113,7 +122,10 @@ PS1+="\[${white}\] in ";
 PS1+="\[${green}\]\w"; # working directory full path
 PS1+="\$(prompt_git \"\[${white}\] on \[${violet}\]\" \"\[${blue}\]\")"; # Git repository details
 PS1+="\n";
-PS1+="\[${white}\]\$ \[${reset}\]"; # `$` (and reset color)
+PS1+="\$(prompt_conda)";
+PS1+="\[${white}\]"
+PS1+="\$"
+PS1+=" \[${reset}\]"; # reset color
 export PS1;
 
 PS2="\[${yellow}\]→ \[${reset}\]";
