@@ -20,7 +20,7 @@ function fs() {
 }
 
 
-function nf() {
+function fn() {
 # from https://stackoverflow.com/a/54305758
 	find . -type f | cut -d/ -f2 | sort | uniq -c
 }
