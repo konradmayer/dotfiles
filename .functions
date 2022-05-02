@@ -19,6 +19,11 @@ function fs() {
 	fi;
 }
 
+
+function nf() {
+	find . -type f | cut -d/ -f2 | sort | uniq -c
+}
+
 function sumcol() {
   awk "{ SUM += \$${1} } END { print SUM }"
 }
