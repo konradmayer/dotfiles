@@ -128,7 +128,13 @@
     "key": "ctrl+k",
     "command": "workbench.action.quickOpenSelectPrevious",
     "when": "inQuickOpen"
-    }
+    },
+  
+    // Terminal command tracking on Windows and Linux (https://github.com/microsoft/vscode-remote-release/issues/2564#issuecomment-609743782)
+    { "key": "ctrl+up",          "command": "workbench.action.terminal.scrollToPreviousCommand", "when": "terminalFocus" },
+    { "key": "ctrl+down",        "command": "workbench.action.terminal.scrollToNextCommand", "when": "terminalFocus" },
+    { "key": "ctrl+shift+up",    "command": "workbench.action.terminal.selectToPreviousCommand", "when": "terminalFocus" },
+    { "key": "ctrl+shift+down",  "command": "workbench.action.terminal.selectToNextCommand", "when": "terminalFocus" },
 ]
 
 
