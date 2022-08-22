@@ -16,6 +16,13 @@
     "editor.rulers": [80],
     "workbench.tree.indent": 20,
     
+    "dotfiles.repository": "konradmayer/dotfiles",
+    "dotfiles.targetPath": "~/dotfiles",
+    "dotfiles.installCommand": "~/dotfiles/install-devcontainer.sh",
+    "remote.containers.dotfiles.repository": "konradmayer/dotfiles",
+    "remote.containers.dotfiles.targetPath": "~/dotfiles",
+    "remote.containers.dotfiles.installCommand": "~/dotfiles/install-devcontainer.sh",
+    
     ///////////////////////////////////////////////////////
     // python
     ///////////////////////////////////////////////////////
