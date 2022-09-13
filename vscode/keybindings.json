@@ -32,7 +32,13 @@
         "command": "workbench.action.terminal.split",
         "when": "terminalFocus"
     },
-  
+    
+    // disable external terminal open on ctrl+shift+c
+    {
+        "key": "ctrl+shift+c",
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
+    },
   
     ///////////////////////////////////////////////////////
     // python
