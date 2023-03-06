@@ -30,4 +30,3 @@ alias dksp='docker system prune -a -f'
 
 # misc aiases
 alias gr=jump-to-git-root # shortcut for a function defined in .functions
-alias om=code $(git ls-files -m) #open modified files in version controlled directory
