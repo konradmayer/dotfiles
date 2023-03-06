@@ -120,6 +120,6 @@ function up ()
     OLDPWD="$old"
 }
 
-funcion om () {
+function om () {
     code $(git ls-files -m)
 }
