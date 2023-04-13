@@ -68,6 +68,12 @@ function jump-to-git-root {
   cd $_root_dir
 }
 
+function archive_branch() {
+  git tag archive/$1
+  git branch -D $1
+}
+
+
 #########################
 # docker
 #########################
