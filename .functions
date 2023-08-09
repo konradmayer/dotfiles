@@ -134,3 +134,8 @@ function nh() {
     nohup $@ > nohup.out 2>&1&
     echo "PROCESS HAS PID $!" | tee nohup.out
 }
+
+function um ()
+{
+    less ~/wiki/um/*$1*
+}
