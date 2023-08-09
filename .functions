@@ -137,5 +137,5 @@ function nh() {
 
 function um ()
 {
-    less ~/wiki/um/*$1*
+    less ~/wiki/um/$1
 }
