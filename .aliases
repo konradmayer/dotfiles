@@ -30,3 +30,6 @@ alias dksp='docker system prune -a -f'
 
 # misc aiases
 alias gr=jump-to-git-root # shortcut for a function defined in .functions
+
+#slurm aliases
+alias sres='sacct -a --format="JobID,jobname,elapsed,CPUTime,MaxRSS"'
