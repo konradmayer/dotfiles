@@ -15,3 +15,6 @@ onoremap in :normal vin<CR>
 
 " https://vim.fandom.com/wiki/Search_and_replace_the_word_under_the_cursor
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
+
+" vim-slime config
+let g:slime_target = "tmux"
