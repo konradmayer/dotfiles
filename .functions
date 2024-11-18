@@ -139,3 +139,15 @@ function um ()
 {
     less ~/wiki/um/$1
 }
+
+# K8S
+
+function cleanup_pods() {
+    kubectl delete pods --field-selector=status.phase==Succeeded -A;
+    kubectl delete pods --field-selector status.phase=Failed -A;
+    kubectl delete pods $(kubectl get pod --all-namespaces -o jsonpath='{.items[?(@.status.containerStatuses[*].state.waiting.reason=="ImagePullBackOff")].metadata.name}')
+}
+
+function get_secrets() {
+  kubectl get secrets $1 -o yaml | yq '.data | map_values(@base64d)'
+}

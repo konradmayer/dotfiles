@@ -39,3 +39,5 @@ alias kc=kubectl
 alias kcge='kubectl get events --sort-by=.lastTimestamp'
 alias kcga='kubectl get $(kubectl api-resources --verbs=list --namespaced -o name | paste -sd ",")'
 alias kcdfailed='kubectl delete pods --field-selector=status.phase=Failed'
+alias kcns="kubectl config set-context --current --namespace "
+alias kccontext="kubectl config current-context"
