@@ -33,3 +33,9 @@ alias gr=jump-to-git-root # shortcut for a function defined in .functions
 
 #slurm aliases
 alias sres='sacct -a --format="JobID,jobname,elapsed,CPUTime,MaxRSS"'
+
+# k8s aliases
+alias kc=kubectl
+alias kcge='kubectl get events --sort-by=.lastTimestamp'
+alias kcga='kubectl get $(kubectl api-resources --verbs=list --namespaced -o name | paste -sd ",")'
+alias kcdfailed='kubectl delete pods --field-selector=status.phase=Failed'

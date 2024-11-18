@@ -33,3 +33,10 @@ done;
 # else
 #     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(__git_ps1 " [%s] ")\$ '
 # fi
+
+# kubernetes
+source <(kubectl completion bash)
+complete -F __start_kubectl kc
+source /etc/bash_completion
+
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH" # krew kubectl plugin
