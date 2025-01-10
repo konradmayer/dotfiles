@@ -140,6 +140,12 @@ function um ()
     less ~/wiki/um/$1
 }
 
+function cheat()
+{
+    curl cheat.sh/$1
+}
+
+
 # K8S
 
 function cleanup_pods() {
