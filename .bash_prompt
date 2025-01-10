@@ -62,10 +62,16 @@ prompt_git() {
 function prompt_conda() {
 	condaprompt=""
 	if [[ $CONDA_DEFAULT_ENV != "base" ]]; then
-		condaprompt="(${CONDA_DEFAULT_ENV}) ";
+		condaprompt="${CONDA_DEFAULT_ENV}";
 	fi;
 
-	echo -e "${condaprompt}";
+	echo "${condaprompt}";
+}
+
+function prompt_k8s() {
+  CLUSTER=$(kubectl config view --minify -o jsonpath="{..cluster}")
+  NAMESPACE=$(kubectl config view --minify -o jsonpath="{..namespace}")
+  echo "${LIGHT_BLACK}[${BLUE}${CLUSTER}|${NAMESPACE}${LIGHT_BLACK}]${COLOR_NONE}"
 }
 
 if tput setaf 1 &> /dev/null; then
@@ -113,9 +119,11 @@ else
 fi;
 
 # Set the terminal title and prompt.
-PS1="\[\033]0;\W\007\]"; # working directory base name
-PS1+="\[${bold}\]\n"; # newline
+PS1="";
+#PS1="\[\033]0;\W\007\]"; # working directory base name
+PS1+="\[${bold}\]";
 PS1+="\$(prompt_conda)";
+PS1+="\$(prompt_k8s)\n";
 PS1+="\[${userStyle}\]\u"; # username
 PS1+="\[${white}\] at ";
 PS1+="\[${hostStyle}\]\h"; # host
