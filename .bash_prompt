@@ -69,9 +69,12 @@ function prompt_conda() {
 }
 
 function prompt_k8s() {
-  CLUSTER=$(kubectl config view --minify -o jsonpath="{.clusters[0].name}")
-  NAMESPACE=$(kubectl config view --minify -o jsonpath="{..namespace}")
-  echo "${LIGHT_BLACK}[${BLUE}${CLUSTER}|${NAMESPACE}${LIGHT_BLACK}]${COLOR_NONE}"
+	if [ -z "yq '.current-context' ~/.kube/config" ]
+	then
+		CLUSTER=$(kubectl config view --minify -o jsonpath="{.clusters[0].name}")
+		NAMESPACE=$(kubectl config view --minify -o jsonpath="{..namespace}")
+		echo "${LIGHT_BLACK}[${BLUE}${CLUSTER}|${NAMESPACE}${LIGHT_BLACK}]${COLOR_NONE}"
+	fi
 }
 
 if tput setaf 1 &> /dev/null; then
