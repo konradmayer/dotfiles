@@ -12,7 +12,7 @@ filetype plugin indent on
 syntax enable    " enable syntax highlighting
 
 set autoindent   " Copy indent from current line when starting a new line
-set clipboard+=unnamedplus " use system clipboard
+set clipboard^=unnamed,unnamedplus " use system clipboard (this needs as version of vim with clipboard support - e.g. vim-gtk, check with `vim --version | grep clipboard`)
 set showcmd      " display incomplete commands
 set showmode     " display the mode you're in
 set backspace=indent,eol,start "intuitive backspacing"
