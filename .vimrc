@@ -86,8 +86,8 @@ Plug 'tpope/vim-repeat', { 'commit': '65846025c15494983dafe5e3b46c8f88ab2e9635' 
 Plug 'machakann/vim-swap', { 'commit': '9358bfdc5e377aa13e7c2c2dd8699ba32b0dcf83' } " https://github.com/machakann/vim-swap
 " Plug 'svermeulen/vim-easyclip', { 'commit': '4601faae051bec8ced37b452b32defca62a633f3' } " https://github.com/svermeulen/vim-easyclip
 Plug 'tommcdo/vim-lion', { 'commit': 'ce46593ecd60e6051fb6e4d3986d2fc9f5a618b1' } " https://github.com/tommcdo/vim-lion
-Plug 'SirVer/ultisnips', { 'commit': 'b22a86f9dcc5257624bff3c72d8b902eac468aad' } " https://github.com/sirver/UltiSnips
-Plug 'honza/vim-snippets', { 'commit': 'f371d635f6f6350d34bbb483e37e383db322d145' } " https://github.com/honza/vim-snippets
+" Plug 'SirVer/ultisnips', { 'commit': 'b22a86f9dcc5257624bff3c72d8b902eac468aad' } " https://github.com/sirver/UltiSnips
+" Plug 'honza/vim-snippets', { 'commit': 'f371d635f6f6350d34bbb483e37e383db322d145' } " https://github.com/honza/vim-snippets
 " Plug 'junegunn/fzf', { 'commit': '14564e4fc7e7d688afe607f4c71ec938c2a8b44a', 'do': { -> fzf#install() } }
 " Plug 'junegunn/fzf.vim', { 'commit': 'ddc14a6a5471147e2a38e6b32a7268282f669b0a' }
 Plug 'Einenlum/yaml-revealer', { 'commit': 'd02928aa452b54368fb613e6d5f3ed73a63d3882' } " https://github.com/Einenlum/yaml-revealer
