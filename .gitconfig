@@ -1,9 +1,9 @@
 [credential]
 	helper = cache
 [core]
-	editor = code --wait
+	editor = vim
 [merge]
-	tool = vscode
+	tool = code
 [mergetool "vscode"]
 	cmd = code --wait $MERGED
 [diff]
