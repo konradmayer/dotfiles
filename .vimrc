@@ -20,7 +20,7 @@ set hidden       " Handle multiple buffers better
 set wildmenu     " enhanced command line completion
 set wildmode=list:longest " complete files like a shell
 
-""" Search
+" Search
 set ignorecase   " case-insensitive search
 set smartcase    " but case-sensitive if expression contains a capital letter
 set relativenumber "show relative line number
@@ -35,7 +35,7 @@ set title        " show terminal title
 set visualbell   " no beeping
 set list         " show invisible characters
 
-"" Global tabs/spaces
+" Global tabs/spaces
 set smarttab     " use spaces instead of tabs
 set expandtab    " use spaces instead of tabs
 set tabstop=2    " global tab width
@@ -48,6 +48,10 @@ set nowritebackup " No backups
 set noswapfile " No swap files
 set autoread " Automatically re-read files changed outside of Vim
 set nofoldenable " Disable folding
+
+" Security
+set nomodeline " Disable modelines to prevent arbitrary code execution from untrusted files
+set modelines=0
 
 """"""""""""""""""""""""""""""
 " plugin config
@@ -69,22 +73,25 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 " Plugins:
 call plug#begin()
-Plug 'christoomey/vim-tmux-navigator' " https://github.com/christoomey/vim-tmux-navigator
-Plug 'preservim/nerdtree' " https://github.com/preservim/nerdtree
-Plug 'jpalardy/vim-slime' " https://github.com/jpalardy/vim-slime
-Plug 'easymotion/vim-easymotion' " https://github.com/easymotion/vim-easymotion
-Plug 'justinmk/vim-sneak' " https://github.com/justinmk/vim-sneak
-Plug 'tpope/vim-surround' " https://github.com/tpope/vim-surround
-Plug 'tpope/vim-commentary' " https://github.com/tpope/vim-commentary
-Plug 'tpope/vim-repeat' " https://github.com/tpope/vim-repeat
-Plug 'mbbill/undotree' " https://github.com/mbbill/undotree
-Plug 'Yggdroot/indentline' " https://github.com/Yggdroot/indentLine
-Plug 'machakann/vim-swap' " https://github.com/machakann/vim-swap
-Plug 'svermeulen/vim-easyclip' " https://github.com/svermeulen/vim-easyclip
-Plug 'tommcdo/vim-lion' " https://github.com/tommcdo/vim-lion
-Plug 'vim-scripts/VimCompletesMe' " https://github.com/vim-scripts/VimCompletesMe
-Plug 'SirVer/ultisnips' " https://github.com/sirver/UltiSnips
-Plug 'honza/vim-snippets' " https://github.com/honza/vim-snippets
+Plug 'christoomey/vim-tmux-navigator', { 'commit': 'c45243dc1f32ac6bcf6068e5300f3b2b237e576a' } " https://github.com/christoomey/vim-tmux-navigator
+Plug 'preservim/nerdtree', { 'commit': '9b465acb2745beb988eff3c1e4aa75f349738230' } " https://github.com/preservim/nerdtree
+" Plug 'jpalardy/vim-slime', { 'commit': '67b24bf93cff3ac39db94694a7aefcdb3f44b927' } " https://github.com/jpalardy/vim-slime
+Plug 'easymotion/vim-easymotion', { 'commit': 'b3cfab2a6302b3b39f53d9fd2cd997e1127d7878' } " https://github.com/easymotion/vim-easymotion
+" Plug 'justinmk/vim-sneak', { 'commit': '18b1faf020e6a66c1ce09b3ff5e6b6feb182973b' } " https://github.com/justinmk/vim-sneak
+Plug 'tpope/vim-surround', { 'commit': '3d188ed2113431cf8dac77be61b842acb64433d9' } " https://github.com/tpope/vim-surround
+Plug 'tpope/vim-commentary', { 'commit': '64a654ef4a20db1727938338310209b6a63f60c9' } " https://github.com/tpope/vim-commentary
+Plug 'tpope/vim-repeat', { 'commit': '65846025c15494983dafe5e3b46c8f88ab2e9635' } " https://github.com/tpope/vim-repeat
+" Plug 'mbbill/undotree', { 'commit': 'fe9a9d0645f0f5532360b5e5f5c550d7bb4f1869' } " https://github.com/mbbill/undotree
+Plug 'Yggdroot/indentline', { 'commit': 'b96a75985736da969ac38b72a7716a8c57bdde98' } " https://github.com/Yggdroot/indentLine
+Plug 'machakann/vim-swap', { 'commit': '9358bfdc5e377aa13e7c2c2dd8699ba32b0dcf83' } " https://github.com/machakann/vim-swap
+" Plug 'svermeulen/vim-easyclip', { 'commit': '4601faae051bec8ced37b452b32defca62a633f3' } " https://github.com/svermeulen/vim-easyclip
+Plug 'tommcdo/vim-lion', { 'commit': 'ce46593ecd60e6051fb6e4d3986d2fc9f5a618b1' } " https://github.com/tommcdo/vim-lion
+Plug 'ajh17/VimCompletesMe'
+Plug 'SirVer/ultisnips', { 'commit': 'b22a86f9dcc5257624bff3c72d8b902eac468aad' } " https://github.com/sirver/UltiSnips
+Plug 'honza/vim-snippets', { 'commit': 'f371d635f6f6350d34bbb483e37e383db322d145' } " https://github.com/honza/vim-snippets
+" Plug 'junegunn/fzf', { 'commit': '14564e4fc7e7d688afe607f4c71ec938c2a8b44a', 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim', { 'commit': 'ddc14a6a5471147e2a38e6b32a7268282f669b0a' }
+Plug 'Einenlum/yaml-revealer', { 'commit': 'd02928aa452b54368fb613e6d5f3ed73a63d3882' } " https://github.com/Einenlum/yaml-revealer
 "" Other plugins to explore
 " Plug 'ctrlpvim/ctrlp.vim' " https://github.com/ctrlpvim/ctrlp.vim
 " Plug 'mileszs/ack.vim' " https://github.com/mileszs/ack.vim
@@ -130,6 +137,12 @@ let g:UltiSnipsExpandTrigger="<c-x>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", $HOME."/UltiSnips"]
+
+" vim-revealer
+let g:yaml_revealer_separator = "."
+let g:yaml_revealer_compact_separator = 1
+let g:yaml_revealer_include_current_key = 1
+let g:yaml_revealer_list_item_names = 1
 
 
 """"""""""""""""""""""""""""""
